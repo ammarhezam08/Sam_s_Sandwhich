@@ -1,2 +1,55 @@
-#The sam's sandwhich
-#1 sam sandwhich please
+def bread_selection():
+    bread_list=["White","Brown","Italian","Granary"]
+    count=0
+    print("We have the following breads:")
+    while count < len(bread_list): #prints out each item on the list
+        print(count+1," ", bread_list[count])
+        count +=1
+    bread_selected=int(input("Which bread did you want? Enter a number: "))
+    return bread_list[bread_selected-1] #returns back a string
+
+def cheese_selection():
+    cheese_list=["Cheddar","Mozarrella","Feta","Gouda"]
+    count=0
+    print("We have the following types of cheese:")
+    while count < len(cheese_list):
+        print(count+1," ",cheese_list[count])
+        count +=1
+    cheese_selected=int(input("Which type of cheese did you choose? Enter a number: "))
+    return cheese_list[cheese_selected-1]
+
+def meat_selection():
+    meats_list=["Beef","Chicken","Goat","Lamb"]
+    count=0
+    print("We have the following types of meats:")
+    while count < len(meats_list):
+        print(count+1," ",meats_list[count])
+        count +=1
+    meat_selected=int(input("Which type of meat did you choose? Enter a number: "))
+    return meats_list[meat_selected-1]
+
+def salad_selection():
+    vegetable_list=["Lettuce","Tomato","Cucumber","Onions"]
+    count=0
+    print("We have the following types of vegetables:")
+    while count < len(vegetable_list):
+        print(count+1," ",vegetable_list[count])
+        count +=1
+    vegetable_selected=int(input("Which type of vegetable did you choose? Enter a number: "))
+    i = 0
+    while True:
+        if vegetable_selected == i + 1:
+            pr
+
+            break
+
+#main program
+print("Welcome to Sam's Sandwhich Shop")
+bread_choice=bread_selection() #creating a variable that calls up the bread function and returns their choice
+cheese_choice=cheese_selection()
+meat_choice=meat_selection()
+vegetable_choice=salad_selection()
+print(f"Your selected bread: {bread_choice}")
+print(f"Your selected cheese: {cheese_choice}")
+print(f"Your selected meat: {meat_choice}")
+print(f"Your selected vegetables: {vegetable_choice}")
