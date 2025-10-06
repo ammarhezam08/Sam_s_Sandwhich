@@ -37,11 +37,11 @@ def salad_selection():
         count +=1
     vegetable_selected=int(input("Which type of vegetable did you choose? Enter a number: "))
     i = 0
-    while True:
-        if vegetable_selected == i + 1:
-            pr
+    #hahawhile True:
+        #if vegetable_selected == i + 1:
+            
 
-            break
+            #break
 #hahaha
 #main program
 print("Welcome to Sam's Sandwhich Shop")
@@ -52,4 +52,4 @@ vegetable_choice=salad_selection()
 print(f"Your selected bread: {bread_choice}")
 print(f"Your selected cheese: {cheese_choice}")
 print(f"Your selected meat: {meat_choice}")
-print(f"Your selected vegetables: {vegetable_choice}")
+#print(f"Your selected vegetables: {vegetable_choice}")
