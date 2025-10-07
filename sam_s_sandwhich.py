@@ -1,3 +1,5 @@
+import datetime
+
 #This program will allow the user to enter in a name
 def force_name(message,lower,upper):
     while True: #this is an infinite loop that will only break if only a valid name is entered
@@ -58,6 +60,9 @@ def salad_selection():
             salad_type = int(salad_type)
             salads_added = salads_added + " " + vegetable_list[salad_type-1]
     return salads_added.strip()
+
+#def output_text_file():
+
     
 #main program
 print("Welcome to Sam's Sandwhich Shop")
@@ -66,7 +71,16 @@ cheese_choice=cheese_selection()
 meat_choice=meat_selection()
 salad_choice=salad_selection()
 print(first_name)
+phone_number = str(input("Enter in your phone number"))
 print(f"Your selected bread: {bread_choice}")
 print(f"Your selected cheese: {cheese_choice}")
 print(f"Your selected meat: {meat_choice}")
 print(f"Your selected vegetables: {salad_choice}")
+
+#sandwhich_order = []
+
+#salad_order.append(first_name)
+#salad_order.append(phone_number)
+#salad_order.append(bread_choice)
+#salad_order.append(meat_choice)
+#salad_order.append(cheese_choice)
