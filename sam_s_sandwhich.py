@@ -9,6 +9,8 @@ def force_name(message,lower,upper):
             print("Invalid name")
     return name #a valid name is returned to the variable that called the function
 
+first_name = force_name("Enter your first name",2,20)
+
 def bread_selection():
     bread_list=["White","Brown","Italian","Granary"]
     count=0
@@ -63,7 +65,7 @@ bread_choice=bread_selection() #creating a variable that calls up the bread func
 cheese_choice=cheese_selection()
 meat_choice=meat_selection()
 salad_choice=salad_selection()
-first_name = force_name("Enter your first name")
+print(first_name)
 print(f"Your selected bread: {bread_choice}")
 print(f"Your selected cheese: {cheese_choice}")
 print(f"Your selected meat: {meat_choice}")
