@@ -28,16 +28,13 @@ first_name = force_name("Enter your first name",2,20)
 #The purpose of this function is to enter in a valid number
 def force_phonenumber(message,lower,upper):
     while True: #infinite loop that keeps repeating until a valid number is entered
-        try:
-            num=str(input(message))
-            if num>=lower and num<=upper and num.isnumeric():
-                return num #returning back a valid number within a range
-            else:
-                print(f"Incorrect, {num}, please enter in a number between {lower}-{upper}")
-        except:
-            print("Error, please enter in a number and not a text")
+        cell=str(input(message))
+        if len(cell)>=lower and len(cell)<=upper and cell.isnumeric():
+            return cell #returning back a valid number within a range
+        else:
+            print(f"Incorrect, {cell}, please enter in a number between {lower}-{upper}")
 
-phone_number = force_phonenumber("Enter in your phone number",9,12)
+phone_number = force_phonenumber("Enter in your phone number",8,12)
 
 def bread_selection():
     bread_list=["White","Brown","Italian","Granary"]
@@ -70,7 +67,7 @@ def meat_selection():
     return meats_list[meat_selected-1]
 
 def salad_selection():
-    vegetable_list=["Lettuce","Tomato","Cucumber","Onions"]
+    vegetable_list=["Lettuce","Tomato","Cucumber","Onions","No salad"]
     count=0
     print("We have the following types of vegetables:")
     while count < len(vegetable_list):
@@ -88,7 +85,7 @@ def salad_selection():
     return salads_added.strip()
 
 def dressings_selection():
-    dressings_list=["Mayonnaise","Mustard","Aioli","Hummus","Ranch dressing"]
+    dressings_list=["Mayonnaise","Mustard","Aioli","Hummus","Ranch dressing","No dressing"]
     count=0
     print("We have the following types of dressings:")
     while count < len(dressings_list):
@@ -97,8 +94,28 @@ def dressings_selection():
     dressing_selected=force_number("Which type of meat did you choose? Enter a number: ",1,len(dressings_list))
     return dressings_list[dressing_selected-1]
 
-#def output_text_file():
+def sandwich_order():
+    sandwhich_order = []
 
+    sandwhich_order.append(first_name)
+    sandwhich_order.append(phone_number)
+    sandwhich_order.append(bread_choice)
+    sandwhich_order.append(meat_choice)
+    sandwhich_order.append(cheese_choice)
+    sandwhich_order.append(salad_choice)
+    sandwhich_order.append(dressing_choice)
+    output_text_file(sandwhich_order)
+
+def output_text_file(sandwhich_order):
+    date_time=datetime.datetime.now()
+    outFile=open("Sandwich_Shop.txt","a")
+    print("***Your sandwich order***")
+    outFile.write(f"\nDate of order is {date_time}")
+    for order in sandwhich_order:
+        print(order)
+        outFile.write(f"\n{order}")
+    print("***End of order***")
+    outFile.close()
     
 #main program
 print("Welcome to Sam's Sandwhich Shop")
@@ -106,17 +123,15 @@ bread_choice=bread_selection() #creating a variable that calls up the bread func
 cheese_choice=cheese_selection()
 meat_choice=meat_selection()
 salad_choice=salad_selection()
+dressing_choice=dressings_selection()
+order=output_text_file()
 print(first_name)
+print(phone_number)
 
 print(f"Your selected bread: {bread_choice}")
 print(f"Your selected cheese: {cheese_choice}")
 print(f"Your selected meat: {meat_choice}")
 print(f"Your selected vegetables: {salad_choice}")
+print(f"Your selected dressing: {dressing_choice}")
+print(order)
 
-#sandwhich_order = []
-
-#salad_order.append(first_name)
-#salad_order.append(phone_number)
-#salad_order.append(bread_choice)
-#salad_order.append(meat_choice)
-#salad_order.append(cheese_choice)
