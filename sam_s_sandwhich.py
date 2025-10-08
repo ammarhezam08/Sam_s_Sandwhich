@@ -61,6 +61,9 @@ def salad_selection():
             salads_added = salads_added + " " + vegetable_list[salad_type-1]
     return salads_added.strip()
 
+def dressings_selection():
+    return
+
 #def output_text_file():
 
     
