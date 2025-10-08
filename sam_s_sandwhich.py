@@ -1,5 +1,17 @@
 import datetime
 
+#The purpose of this function is to enter in a valid number
+def force_number(message,lower,upper):
+    while True: #infinite loop that keeps repeating until a valid number is entered
+        try:
+            num=int(input(message))
+            if num>=lower and num<=upper:
+                return num #returning back a valid number within a range
+            else:
+                print(f"Incorrect, {num}, please enter in a number between {lower}-{upper}")
+        except:
+            print("Error, please enter in a number and not a text")
+
 #This program will allow the user to enter in a name
 def force_name(message,lower,upper):
     while True: #this is an infinite loop that will only break if only a valid name is entered
@@ -13,6 +25,20 @@ def force_name(message,lower,upper):
 
 first_name = force_name("Enter your first name",2,20)
 
+#The purpose of this function is to enter in a valid number
+def force_phonenumber(message,lower,upper):
+    while True: #infinite loop that keeps repeating until a valid number is entered
+        try:
+            num=str(input(message))
+            if num>=lower and num<=upper and num.isnumeric():
+                return num #returning back a valid number within a range
+            else:
+                print(f"Incorrect, {num}, please enter in a number between {lower}-{upper}")
+        except:
+            print("Error, please enter in a number and not a text")
+
+phone_number = force_phonenumber("Enter in your phone number",9,12)
+
 def bread_selection():
     bread_list=["White","Brown","Italian","Granary"]
     count=0
@@ -20,7 +46,7 @@ def bread_selection():
     while count < len(bread_list): #prints out each item on the list
         print(count+1," ", bread_list[count])
         count +=1
-    bread_selected=int(input("Which bread did you want? Enter a number: "))
+    bread_selected=force_number("Which bread did you want? Enter a number: ",1,len(bread_list))
     return bread_list[bread_selected-1] #returns back a string
 
 def cheese_selection():
@@ -30,7 +56,7 @@ def cheese_selection():
     while count < len(cheese_list):
         print(count+1," ",cheese_list[count])
         count +=1
-    cheese_selected=int(input("Which type of cheese did you choose? Enter a number: "))
+    cheese_selected=force_number("Which type of cheese did you choose? Enter a number: ",1,len(cheese_list))
     return cheese_list[cheese_selected-1]
 
 def meat_selection():
@@ -40,7 +66,7 @@ def meat_selection():
     while count < len(meats_list):
         print(count+1," ",meats_list[count])
         count +=1
-    meat_selected=int(input("Which type of meat did you choose? Enter a number: "))
+    meat_selected=force_number("Which type of meat did you choose? Enter a number: ",1,len(meats_list))
     return meats_list[meat_selected-1]
 
 def salad_selection():
@@ -62,7 +88,14 @@ def salad_selection():
     return salads_added.strip()
 
 def dressings_selection():
-    return
+    dressings_list=["Mayonnaise","Mustard","Aioli","Hummus","Ranch dressing"]
+    count=0
+    print("We have the following types of dressings:")
+    while count < len(dressings_list):
+        print(count+1," ",dressings_list[count])
+        count +=1
+    dressing_selected=force_number("Which type of meat did you choose? Enter a number: ",1,len(dressings_list))
+    return dressings_list[dressing_selected-1]
 
 #def output_text_file():
 
@@ -74,7 +107,7 @@ cheese_choice=cheese_selection()
 meat_choice=meat_selection()
 salad_choice=salad_selection()
 print(first_name)
-phone_number = str(input("Enter in your phone number"))
+
 print(f"Your selected bread: {bread_choice}")
 print(f"Your selected cheese: {cheese_choice}")
 print(f"Your selected meat: {meat_choice}")
