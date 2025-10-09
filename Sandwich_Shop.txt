@@ -28,3 +28,16 @@ Lettuce
 Mayonnaise
 End of order: 2025-10-09 13:04:32.979084
 ----------------------------------------
+
+Date of order is 2025-10-10 11:34:15.223955
+Your first name: Ammar
+Your phone number: 123456789
+Type of bread: White
+Type of meat: Chicken
+Type of cheese: Cheddar
+Type of salad/s you chose: 
+Lettuce Tomato Onions
+Type of sauce/s: 
+Mayonnaise
+End of order: 2025-10-10 11:34:15.223955
+----------------------------------------

@@ -100,8 +100,8 @@ def sandwich_order():
     sandwhich_order.append(f"Type of bread: {bread_choice}")
     sandwhich_order.append(f"Type of meat: {meat_choice}")
     sandwhich_order.append(f"Type of cheese: {cheese_choice}")
-    sandwhich_order.append(salad_choice)
-    sandwhich_order.append(dressing_choice)
+    sandwhich_order.append(f"Type of salad/s you chose: \n{salad_choice}")
+    sandwhich_order.append(f"Type of sauce: {dressing_choice}")
     output_text_file(sandwhich_order)
 
 def output_text_file(sandwhich_order):
