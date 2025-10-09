@@ -1,5 +1,30 @@
 
-Date of order is 2025-10-09 10:34:15.386971
-Date of order is 2025-10-09 10:36:51.923810
-Date of order is 2025-10-09 10:38:05.275043
-Date of order is 2025-10-09 10:40:19.446595
+Date of order is 2025-10-09 13:02:52.263347
+Your first name: Ammar
+Your phone number: 12121212
+Type of bread: White
+Type of meat: Beef
+Type of cheese: Cheddar
+Lettuce Lettuce
+MayonnaiseEnd of order: 2025-10-09 13:02:52.263347----------------------------------------
+
+Date of order is 2025-10-09 13:03:54.810928
+Your first name: Hihui
+Your phone number: 2131254151
+Type of bread: Italian
+Type of meat: Beef
+Type of cheese: Cheddar
+Lettuce Lettuce Lettuce
+Mayonnaise
+End of order: 2025-10-09 13:03:54.810928----------------------------------------
+
+Date of order is 2025-10-09 13:04:32.979084
+Your first name: Dfvhfdvj
+Your phone number: 2423323523
+Type of bread: White
+Type of meat: Beef
+Type of cheese: Cheddar
+Lettuce
+Mayonnaise
+End of order: 2025-10-09 13:04:32.979084
+----------------------------------------

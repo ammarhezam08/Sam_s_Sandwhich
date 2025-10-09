@@ -1,5 +1,4 @@
 import datetime
-
 #The purpose of this function is to enter in a valid number
 def force_number(message,lower,upper):
     while True: #infinite loop that keeps repeating until a valid number is entered
@@ -96,12 +95,11 @@ def dressings_selection():
 
 def sandwich_order():
     sandwhich_order = []
-
-    sandwhich_order.append(first_name)
-    sandwhich_order.append(phone_number)
-    sandwhich_order.append(bread_choice)
-    sandwhich_order.append(meat_choice)
-    sandwhich_order.append(cheese_choice)
+    sandwhich_order.append(f"Your first name: {first_name}")
+    sandwhich_order.append(f"Your phone number: {phone_number}")
+    sandwhich_order.append(f"Type of bread: {bread_choice}")
+    sandwhich_order.append(f"Type of meat: {meat_choice}")
+    sandwhich_order.append(f"Type of cheese: {cheese_choice}")
     sandwhich_order.append(salad_choice)
     sandwhich_order.append(dressing_choice)
     output_text_file(sandwhich_order)
@@ -114,7 +112,9 @@ def output_text_file(sandwhich_order):
     for order in sandwhich_order:
         print(order)
         outFile.write(f"\n{order}")
-    print("***End of order***")
+    print(f"***End of order: {date_time}***")
+    outFile.write(f"\nEnd of order: {date_time}\n")
+    outFile.write("-" * 40 + "\n")
     outFile.close()
     
 #main program
@@ -124,7 +124,6 @@ cheese_choice=cheese_selection()
 meat_choice=meat_selection()
 salad_choice=salad_selection()
 dressing_choice=dressings_selection()
-order=output_text_file()
 print(first_name)
 print(phone_number)
 
@@ -133,5 +132,4 @@ print(f"Your selected cheese: {cheese_choice}")
 print(f"Your selected meat: {meat_choice}")
 print(f"Your selected vegetables: {salad_choice}")
 print(f"Your selected dressing: {dressing_choice}")
-print(order)
-
+sandwich_order()
