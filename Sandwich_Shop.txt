@@ -1,43 +1,10 @@
-
-Date of order is 2025-10-09 13:02:52.263347
-Your first name: Ammar
-Your phone number: 12121212
-Type of bread: White
-Type of meat: Beef
-Type of cheese: Cheddar
-Lettuce Lettuce
-MayonnaiseEnd of order: 2025-10-09 13:02:52.263347----------------------------------------
-
-Date of order is 2025-10-09 13:03:54.810928
-Your first name: Hihui
-Your phone number: 2131254151
-Type of bread: Italian
-Type of meat: Beef
-Type of cheese: Cheddar
-Lettuce Lettuce Lettuce
-Mayonnaise
-End of order: 2025-10-09 13:03:54.810928----------------------------------------
-
-Date of order is 2025-10-09 13:04:32.979084
-Your first name: Dfvhfdvj
-Your phone number: 2423323523
-Type of bread: White
-Type of meat: Beef
-Type of cheese: Cheddar
-Lettuce
-Mayonnaise
-End of order: 2025-10-09 13:04:32.979084
-----------------------------------------
-
-Date of order is 2025-10-10 11:34:15.223955
+Date of order is 2025-10-10 12:14:53.713952
 Your first name: Ammar
 Your phone number: 123456789
 Type of bread: White
 Type of meat: Chicken
 Type of cheese: Cheddar
-Type of salad/s you chose: 
-Lettuce Tomato Onions
-Type of sauce/s: 
-Mayonnaise
-End of order: 2025-10-10 11:34:15.223955
+Type of salad/s you chose: Lettuce Tomato
+Type of sauce: Mayonnaise
+End of order: 2025-10-10 12:14:53.713952
 ----------------------------------------

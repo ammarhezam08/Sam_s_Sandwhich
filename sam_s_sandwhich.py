@@ -33,10 +33,10 @@ def force_phonenumber(message,lower,upper):
         else:
             print(f"Incorrect, {cell}, please enter in a number between {lower}-{upper}")
 
-phone_number = force_phonenumber("Enter in your phone number",8,12)
+phone_number = force_phonenumber("Enter in your phone number",9,12)
 
 def bread_selection():
-    bread_list=["White","Brown","Italian","Granary"]
+    bread_list=["White","Brown","Italian","Granary","No bread"]
     count=0
     print("We have the following breads:")
     while count < len(bread_list): #prints out each item on the list
@@ -46,30 +46,30 @@ def bread_selection():
     return bread_list[bread_selected-1] #returns back a string
 
 def cheese_selection():
-    cheese_list=["Cheddar","Mozarrella","Feta","Gouda"]
+    cheese_list=["Cheddar","Mozarrella","Feta","Gouda","No cheese"]
     count=0
     print("We have the following types of cheese:")
-    while count < len(cheese_list):
+    while count < len(cheese_list): #This will print out all the items as a list
         print(count+1," ",cheese_list[count])
         count +=1
     cheese_selected=force_number("Which type of cheese did you choose? Enter a number: ",1,len(cheese_list))
-    return cheese_list[cheese_selected-1]
+    return cheese_list[cheese_selected-1] #returns back a string
 
 def meat_selection():
-    meats_list=["Beef","Chicken","Goat","Lamb"]
+    meats_list=["Beef","Chicken","Goat","Lamb","No meat"]
     count=0
     print("We have the following types of meats:")
-    while count < len(meats_list):
+    while count < len(meats_list): #This will print out the items as a list
         print(count+1," ",meats_list[count])
         count +=1
     meat_selected=force_number("Which type of meat did you choose? Enter a number: ",1,len(meats_list))
-    return meats_list[meat_selected-1]
+    return meats_list[meat_selected-1] #returns back a string
 
 def salad_selection():
     vegetable_list=["Lettuce","Tomato","Cucumber","Onions","No salad"]
     count=0
     print("We have the following types of vegetables:")
-    while count < len(vegetable_list):
+    while count < len(vegetable_list): #This will print out all the items as a list
         print(count+1," ",vegetable_list[count])
         count +=1
     print ("Press ENTER when you have finsished choosing your salads")
@@ -81,55 +81,47 @@ def salad_selection():
         if salad_type != "": #if you don't press to enter it will prompt you to enter a prompt
             salad_type = int(salad_type)
             salads_added = salads_added + " " + vegetable_list[salad_type-1]
-    return salads_added.strip()
+    return salads_added.strip() #returns all the items you chose as a string
 
 def dressings_selection():
     dressings_list=["Mayonnaise","Mustard","Aioli","Hummus","Ranch dressing","No dressing"]
     count=0
     print("We have the following types of dressings:")
-    while count < len(dressings_list):
+    while count < len(dressings_list): #This will print out all the items as a list
         print(count+1," ",dressings_list[count])
         count +=1
     dressing_selected=force_number("Which type of meat did you choose? Enter a number: ",1,len(dressings_list))
-    return dressings_list[dressing_selected-1]
+    return dressings_list[dressing_selected-1] #returns back a string
 
-def sandwich_order():
+def output_text_file(sandwhich_order): #creating a list which then outputs to a notepad file with a timestamp
+    date_time=datetime.datetime.now()
+    outFile=open("Sandwich_Shop.txt","a") #creating a list which then outputs to a notepad file with a timestamp
+    print("***Your sandwich order***")
+    outFile.write(f"\nDate of order is {date_time}") #opening statement in text file
+    for order in sandwhich_order: #for every item ordered
+        print(order) #prints out the items in the list seperately
+        outFile.write(f"\n{order}") #this will print out the items on a seperate lines
+    print(f"***End of order: {date_time}***") #test prints on pyscripter
+    outFile.write(f"\nEnd of order: {date_time}\n")
+    outFile.write("-" * 40 + "\n")
+    outFile.close() #closes the order list file
+    
+def main_menu():
+    print("Welcome to Sam's Sandwhich Shop")
+    bread_choice=bread_selection() #creating a variable that calls up the bread function and returns their choice
+    cheese_choice=cheese_selection()
+    meat_choice=meat_selection()
+    salad_choice=salad_selection()
+    dressing_choice=dressings_selection()
     sandwhich_order = []
-    sandwhich_order.append(f"Your first name: {first_name}")
+    sandwhich_order.append(f"Your first name: {first_name}") #This adds all the information in a list
     sandwhich_order.append(f"Your phone number: {phone_number}")
     sandwhich_order.append(f"Type of bread: {bread_choice}")
     sandwhich_order.append(f"Type of meat: {meat_choice}")
     sandwhich_order.append(f"Type of cheese: {cheese_choice}")
-    sandwhich_order.append(f"Type of salad/s you chose: \n{salad_choice}")
+    sandwhich_order.append(f"Type of salad/s you chose: {salad_choice}")
     sandwhich_order.append(f"Type of sauce: {dressing_choice}")
-    output_text_file(sandwhich_order)
+    output_text_file(sandwhich_order) #calls out the function that will print the whole order
 
-def output_text_file(sandwhich_order):
-    date_time=datetime.datetime.now()
-    outFile=open("Sandwich_Shop.txt","a")
-    print("***Your sandwich order***")
-    outFile.write(f"\nDate of order is {date_time}")
-    for order in sandwhich_order:
-        print(order)
-        outFile.write(f"\n{order}")
-    print(f"***End of order: {date_time}***")
-    outFile.write(f"\nEnd of order: {date_time}\n")
-    outFile.write("-" * 40 + "\n")
-    outFile.close()
-    
 #main program
-print("Welcome to Sam's Sandwhich Shop")
-bread_choice=bread_selection() #creating a variable that calls up the bread function and returns their choice
-cheese_choice=cheese_selection()
-meat_choice=meat_selection()
-salad_choice=salad_selection()
-dressing_choice=dressings_selection()
-print(first_name)
-print(phone_number)
-
-print(f"Your selected bread: {bread_choice}")
-print(f"Your selected cheese: {cheese_choice}")
-print(f"Your selected meat: {meat_choice}")
-print(f"Your selected vegetables: {salad_choice}")
-print(f"Your selected dressing: {dressing_choice}")
-sandwich_order()
+main_menu()
