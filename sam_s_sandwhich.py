@@ -73,15 +73,16 @@ def salad_selection():
         print(count+1," ",vegetable_list[count])
         count +=1
     print ("Press ENTER when you have finsished choosing your salads")
-    salads_added = "" #Set to nothing
-    salad_type = " " #adds an wmpty string
-    
-    while salad_type != "": 
-        salad_type = input("what number salad do you want? \n1-Lettuce \n2-Tomato \n3-Cucumber \n4-Onions")
-        if salad_type != "": #if you don't press to enter it will prompt you to enter a prompt
-            salad_type = int(salad_type)
-            salads_added = salads_added + " " + vegetable_list[salad_type-1]
-    return salads_added.strip() #returns all the items you chose as a string
+    salad_choice=[] #empty list to store the selected salads
+    while True: #infinite loop
+        salad_option=force_number("What number salad do you want? \n1-Lettuce \n2-Tomato \n3-Cucumber \n4-Onions \n5-No salad",1,len(vegetable_list))
+        salad_choice.append(vegetable_list[salad_option-1])
+        if salad_option == 5: #if the user selects no salads the fuction ends
+            break
+        exit_salads=force_number(f"Do you want more salads? press 1 to continue or 2 to exit\nYou have selected: {salad_choice}",1,2)
+        if exit_salads == 2: #if thr user does not want more salads the fuction ends
+            break
+    return ",".join(salad_choice) #nicely formated string using commas
 
 def dressings_selection():
     dressings_list=["Mayonnaise","Mustard","Aioli","Hummus","Ranch dressing","No dressing"]
